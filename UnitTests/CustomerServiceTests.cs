@@ -5,6 +5,7 @@ using NSubstitute;
 
 namespace UnitTests
 {
+    [TestFixture, Parallelizable(ParallelScope.Fixtures)]
     public class CustomerServiceTests
     {
         private readonly ICustomerService _customerService;
@@ -54,7 +55,7 @@ namespace UnitTests
 
             //Assert
             Assert.IsNull(customer);
-        }
+        }        
 
         [TearDown]
         public void TearDown()
