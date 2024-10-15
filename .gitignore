@@ -1,0 +1,24 @@
+# Ignore Visual Studio files
+*.suo
+*.user
+*.vs/
+
+# Ignore build output
+bin/
+obj/
+
+# Ignore NuGet packages
+packages/
+*.nupkg
+
+# Ignore DLL files
+*.dll
+
+# Ignore exe files
+*.exe
+
+# Debug files
+*.pdb
+
+# Verify
+*.received.*

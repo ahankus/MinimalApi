@@ -1,0 +1,6 @@
+﻿{
+  name: Test Customer,
+  accountNumber: {
+    number: 0123-4567-890123-0123-0123
+  }
+}
