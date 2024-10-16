@@ -3,7 +3,7 @@ using MinimalApi.Models;
 
 namespace MinimalApi.Services;
 
-public class CustomerService
+public class CustomerService : ICustomerService
 {
     private readonly ICustomerRepository _customerRepository;
 
@@ -16,14 +16,14 @@ public class CustomerService
     {
         return _customerRepository.GetAll();
     }
-    
+
     public CustomerModel GetCustomerById(string id)
     {
-        var existingcCustomer = _customerRepository.GetById(id);
-        if (existingcCustomer != null)
+        var existingCustomer = _customerRepository.GetById(id);
+        if (existingCustomer != null)
         {
             _customerRepository.GetById(id);
-            return _customerRepository.GetById(existingcCustomer.Id);
+            return _customerRepository.GetById(existingCustomer.Id);
         }
         return null;
     }
@@ -43,16 +43,15 @@ public class CustomerService
         }
         return false;
     }
-    
+
     public bool DeleteAll()
     {
         var allCustomers = _customerRepository.GetAll();
-
         if (allCustomers != null && allCustomers.Any())
         {
-            foreach (var accountNumber in allCustomers)
+            foreach (var customer in allCustomers)
             {
-                _customerRepository.Delete(accountNumber.Id);
+                _customerRepository.Delete(customer.Id);
             }
             return true;
         }

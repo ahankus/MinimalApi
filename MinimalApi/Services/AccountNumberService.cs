@@ -4,7 +4,7 @@ using MinimalApi.Models;
 
 namespace MinimalApi.Services
 {
-    public class AccountNumberService
+    public class AccountNumberService : IAccountNumberService
     {
         private readonly IAccountNumberRepository _accountNumberRepository;
 
